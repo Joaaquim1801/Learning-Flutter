@@ -1,0 +1,4 @@
+Conceito:
+Widget === Uma classe que representa um estado de uma tela (Stateless e Statefull)
+Estado === Dois tipos: Global e o local
+StatelssWidget === Widget imutável, não tem animação, alteração
