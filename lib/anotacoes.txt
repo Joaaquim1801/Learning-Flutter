@@ -1,0 +1,11 @@
+Conceito:
+Widget === Uma classe que representa um estado de uma tela (Stateless e Statefull)
+Estado === Dois tipos: Global e o local
+StatelssWidget === Widget imutável, não tem animação, alteração
+
+Existe a diferença entre SingleRender e MultiRender:
+    -> No SingleRender
+
+As vezes mesmo criando um container menor dentro de um container maior ele vai herdar o tamanho do container pai
+pq o pai passa um CONSTRAINTS TIGHT, ou seja, o container do pai sempre tem prioridade sobre o tamanho desejado do filho.
+É necessário então de um Widget que providencie constraints mais soltas, como o Align ou o Center

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/appControler.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,13 +22,10 @@ class HomePageState extends State<HomePage> {
         backgroundColor: Colors.lightBlue,
       ),
       body: Center(
-        child: GestureDetector(
-          child: Text("Counter: $counter", style: TextStyle(fontSize: 25)),
-          onTap: () {
-            setState(() {
-              counter++;
-            }); //O setState chama o builder para poder atualizar o estado
-            print("Counter: $counter");
+        child: Switch(
+          value: Appcontroler.instance.isDarkTheme,
+          onChanged: (value) {
+            Appcontroler.instance.changeTheme();
           },
         ),
       ),
