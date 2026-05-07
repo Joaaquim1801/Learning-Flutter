@@ -21,12 +21,23 @@ class HomePageState extends State<HomePage> {
         ),
         backgroundColor: Colors.lightBlue,
       ),
-      body: Center(
-        child: Switch(
-          value: Appcontroler.instance.isDarkTheme,
-          onChanged: (value) {
-            Appcontroler.instance.changeTheme();
-          },
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Contador: $counter"),
+            CustomSwitch(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Container(width: 50, height: 50, color: Colors.black),
+                Container(width: 50, height: 50, color: Colors.black),
+                Container(width: 50, height: 50, color: Colors.black),
+              ],
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
@@ -38,6 +49,19 @@ class HomePageState extends State<HomePage> {
           });
         },
       ),
+    );
+  }
+}
+
+//Widget Componentization
+class CustomSwitch extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+      value: Appcontroler.instance.isDarkTheme,
+      onChanged: (value) {
+        Appcontroler.instance.changeTheme();
+      },
     );
   }
 }
